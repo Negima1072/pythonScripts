@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 INFILES=(../_*.{py})
 OUTFILE=../README.md
 
