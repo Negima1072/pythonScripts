@@ -10,7 +10,7 @@ function extract_summary() {
 	  echo "* [$name]($link) - $(fgrep -A5 -i "#summary:" $f | tr -d \\r | grep -v "^#summary:" | sed -n "s/^ *\([^=#*].*\)$/\1/gp" | head -1)"
   done
 }
-INFILES=($(printf '%s\n' "${INFILES[@]}" | sed -n "s/^\(.*\/_\([A-Z][A-Z]*\)\{0,1\}_*\([^.]*\)\(\.[a-z]*\)\)$/\3_\2 \1/p" | sort | sed -n "s/.* \(.*\)/\1/p" | tr "\n" " "))
+INFILES=($(printf '%s\n' "${INFILES[@]}" | tr "\n" " "))
 echo "${INFILES[@]}" | tr " " "\n"
 echo "${#INFILES[@]} files."
 
