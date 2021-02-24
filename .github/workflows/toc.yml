@@ -1,13 +1,38 @@
-on: push
-name: TOC Generator
+# README.mdを更新する
 
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  toc:
-    if: github.event.pull_request.head.user.id == github.event.pull_request.base.user.id
-    name: TOC Generator
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: technote-space/toc-generator@v4.0.0
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: configure git
+        run: |
+          git config --local user.email "tkser@icloud.com" # TODO 適切なアドレスに変更する
+          git config --local user.name "README.md generator"
+      - name: update README.md and push
+        run: |
+          cd manage
+          ./genREADME.sh
+          git diff --quiet && git diff --staged --quiet || git commit -am "update README.sh" && git push
