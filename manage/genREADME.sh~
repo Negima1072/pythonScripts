@@ -1,5 +1,5 @@
 #!/bin/bash
-INFILES=(../*.py)
+INFILES=(../*.{py})
 OUTFILE=../README.md
 
 function extract_summary() {
