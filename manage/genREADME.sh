@@ -7,7 +7,7 @@ function extract_summary() {
   do
 	  link=$(basename $f)
 	  name=$(echo $link | sed -e "s/\(.*\).py/\1/")
-	  echo "* [$name]($link) - $(fgrep -A5 -i "#summary:" $f | tr -d \\r | grep "#summary:" | sed -e "s/#summary:\(.*\)/\1/""
+	  echo "* [$name]($link) - $(fgrep -A5 -i "#summary:" $f | tr -d \\r | grep "#summary:" | sed -e "s/#summary:\(.*\)/\1/")"
   done
 }
 INFILES=($(printf '%s\n' "${INFILES[@]}" | tr "\n" " "))
