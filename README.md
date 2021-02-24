@@ -2,8 +2,14 @@
 python scripts for niconico and twitter ect...
 
 <<<<<<< HEAD
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Author](#author)
+- [Negima1072 (@Negima1072)](#negima1072-negima1072)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Author
 Negima1072 ([@Negima1072](https://twitter.com/Negima1072))
