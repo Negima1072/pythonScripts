@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#summary:Get Nicolive comments.
 import re
 from getpass import getpass
 import requests
