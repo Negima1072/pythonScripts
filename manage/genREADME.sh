@@ -19,6 +19,6 @@ $(cat README.head.md | tr -d \\r)
 $(extract_summary ${INFILES[@]})
 $(cat README.foot.md | tr -d \\r)
 
-$(TZ=-9 date +"Update: %Y/%m/%d %I:%M:%S by [genREADME](manage/genREADME.sh)")
+$(timedatectl set-timezone Asia/Tokyo && date +"Update: %Y/%m/%d %I:%M:%S by [genREADME](manage/genREADME.sh)")
 EOF
 git add $OUTFILE
