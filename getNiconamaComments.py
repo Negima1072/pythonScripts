@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#summary:Get Nicolive comments.
+#summary:ニコニコ生放送のコメント一覧を取得します。
 import re
 from getpass import getpass
 import requests
@@ -23,7 +23,7 @@ if not os.path.exists(".tmp"):
 mail_regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 
 session = requests.session()
-session.headers = {"User-Agent":"getNiconamaComment.py/v0.0.1@Negima1072"}
+session.headers = {"User-Agent":"getNiconamaComments.py/v0.0.1@Negima1072"}
 
 if os.path.exists(".NiconicoUserSessionTmp"):
     with open(".NiconicoUserSessionTmp", mode="r") as f:
