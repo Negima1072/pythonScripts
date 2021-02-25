@@ -6,8 +6,6 @@ python scripts for niconico and twitter ect...
 * [getNicovideoComments](getNicovideoComments.py) - ニコニコ動画のコメント一覧を取得します。(oldV)
 
 ## Author
-Copyright (c) 2021 Negima1072 under the MIT License.
+Copyright (c) 2021 [Negima1072](https://twitter.com/Negima1072) under the MIT License.
 
-Negima1072 ([@Negima1072](https://twitter.com/Negima1072))
 
-Update: 2021/02/25 10:32:07 by [genREADME](manage/genREADME.sh)
