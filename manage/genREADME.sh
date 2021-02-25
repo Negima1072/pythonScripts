@@ -19,7 +19,6 @@ $(cat README.head.md | tr -d \\r)
 $(extract_summary ${INFILES[@]})
 $(cat README.foot.md | tr -d \\r)
 
-
-$(&& date +"Updt: %Y/%m/%d %I:%M:%S by genREADME")
+$(date +"Updt: %Y/%m/%d %I:%M:%S by genREADME")
 EOF
 git add $OUTFILE
