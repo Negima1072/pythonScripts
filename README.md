@@ -10,4 +10,4 @@ Copyright (c) 2021 Negima1072 under the MIT License.
 
 Negima1072 ([@Negima1072](https://twitter.com/Negima1072))
 
-Updt: 2021/02/25 10:28:09 by genREADME
+Update: 2021/02/25 10:32:07 by [genREADME](manage/genREADME.sh)
