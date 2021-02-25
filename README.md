@@ -8,5 +8,5 @@ python scripts for niconico and twitter ect...
 Copyright (c) 2021 Negima1072 under the MIT License.
 
 Negima1072 ([@Negima1072](https://twitter.com/Negima1072))
-\n
-Updt:2021/02/25 09:59:44
+e \n\n
+Updt: 2021/02/25 10:03:39 by genREADME
