@@ -18,6 +18,6 @@ cat <<EOF > $OUTFILE
 $(cat README.head.md | tr -d \\r)
 $(extract_summary ${INFILES[@]})
 $(cat README.foot.md | tr -d \\r)
-$(echo "\n" && date +"Updt:%Y/%m/%d %I:%M:%S")
+$(echo \e "\n\n" && date +"Updt: %Y/%m/%d %I:%M:%S by genREADME")
 EOF
 git add $OUTFILE
