@@ -8,4 +8,4 @@ python scripts for niconico, twitter or etc...
 ## Author
 Copyright (c) 2021 [Negima1072](https://twitter.com/Negima1072) under the MIT License.
 
-Update: 2021/02/25 19:59:36 by [genREADME](manage/genREADME.sh)
+Update: 2021/03/11 02:13:59 by [genREADME](manage/genREADME.sh)
