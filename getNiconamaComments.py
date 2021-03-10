@@ -68,7 +68,8 @@ except:
     print("Get movie data failed..")
     sys.exit(1)
 
-ws = None
+websocket.enableTrace(True)
+wss = None
 msgws = None
 chats = []
 last_res = 0
@@ -76,6 +77,7 @@ num = 0
 whenn = jres["program"]["openTime"]
 endt = jres["program"]["endTime"]
 tmp = 1
+
 
 def msgws_on_open(ws):
     def run(*args):
@@ -117,8 +119,8 @@ def msgws_on_mess(ws, msg):
             #print("↑"+str(req))
 
 def msgws_on_close(msgws):
-    global ws
-    ws.close()
+    global wss
+    wss.close()
 
 def mws_on_open(ws):
     def run(*args):
@@ -135,7 +137,7 @@ def mws_on_mess(ws, msg):
         req = {"type": "keepSeat"}
         ws.send(json.dumps(req))
     elif res["type"] == "room":
-        msgws = websocket.WebSocketApp(res["data"]["messageServer"]["uri"], on_open=msgws_on_open, on_message=msgws_on_mess, cookie="thread="+res["data"]["threadId"]+";")
+        msgws = websocket.WebSocketApp(res["data"]["messageServer"]["uri"], on_open=msgws_on_open, on_message=msgws_on_mess, cookie="thread="+res["data"]["threadId"]+";", header={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36"})
         msgws.run_forever()
 
 def mws_on_close(ws):
@@ -156,10 +158,11 @@ def mws_on_close(ws):
     print("Finished.")
     sys.exit(0)
 
-websocket.enableTrace(True)
-ws = websocket.WebSocketApp(
+wss = websocket.WebSocketApp(
     jres["site"]["relive"]["webSocketUrl"]+"&frontend_id="+str(jres["site"]["frontendId"]),
     on_open=mws_on_open,
-    on_message=mws_on_mess
+    on_message=mws_on_mess,
+    header={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36"}
 )
-ws.run_forever()
+
+wss.run_forever()
