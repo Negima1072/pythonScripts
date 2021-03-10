@@ -1,5 +1,5 @@
 # pythonScripts
-python scripts for niconico and twitter ect...
+python scripts for niconico, twitter or etc...
 
 ## Scripts
 * [getNiconamaComments](getNiconamaComments.py) - ニコニコ生放送のコメント一覧を取得します。
@@ -8,4 +8,4 @@ python scripts for niconico and twitter ect...
 ## Author
 Copyright (c) 2021 [Negima1072](https://twitter.com/Negima1072) under the MIT License.
 
-Update: 2021/02/25 19:50:56 by [genREADME](manage/genREADME.sh)
+Update: 2021/02/25 19:59:36 by [genREADME](manage/genREADME.sh)
