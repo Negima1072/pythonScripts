@@ -77,6 +77,7 @@ else:
       log("Check chats file => ./chats ...NG", "ERROR")
       sys.exit()
 
+"""
 userid = str(d["initConfig"]["user"]["id"])
 mvurl="https://www.nicovideo.jp/watch/"+id
 log("Access to "+mvurl)
@@ -88,11 +89,13 @@ with open("js-initial-watch-data-"+id+".json", mode='w', encoding="utf-8") as f:
    f.write(ch)
 
 log("smID:"+d["video"]["id"]+" title:"+d["video"]["title"])
+
 userkey=d["context"]["userkey"]
-dthread=d["thread"]["ids"]["default"]
-contenthun=str(math.ceil(int(d["video"]["duration"])/60))
+"""
+dthread="1651922049"
+#contenthun=str(math.ceil(int(d["video"]["duration"])/60))
 reqthread=[{"thread":{"language":0,"nicoru":3,"scores":1,"with_global":1,"version":20090904,"thread":str(dthread),"res_from":-1000}}]
-msgurl="https://nmsg.nicovideo.jp/api.json"
+msgurl="https://nvcomment.nicovideo.jp/legacy/api.json"
 res=ses.post(msgurl, json=reqthread).text
 log("Get resentment chats 1000 => "+msgurl)
 resjson=json.loads(res)
@@ -156,7 +159,7 @@ while True:
    with open("comments-"+id+".json", mode='w', encoding="utf-8") as f:
       f.write(json.dumps(chats))
       log("Save all comments file by json","TMP")
-   time.sleep(0.1)
+   time.sleep(1)
 
 log("Finished while program.")
 with open("comments-"+id+".json", mode='w', encoding="utf-8") as f:
